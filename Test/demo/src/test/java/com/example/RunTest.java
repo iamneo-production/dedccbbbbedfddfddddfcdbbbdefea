@@ -6,44 +6,44 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SeleniumAssignment {
-    WebDriver driver;
+  WebDriver driver;
 
-    @BeforeMethod
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
+  @BeforeMethod
+  public void setUp() {
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\dell\\Desktop\\selenium jars\\chromedriver.exe");
+    driver = new ChromeDriver();
+    driver.manage().window().maximize();
+  }
 
-    @Test
-    public void testScenario() {
+  @Test
+  public void testScenario() {
        
-        driver.get("http://iamneo.ai");
+    driver.get("http://iamneo.ai");
 
         
-        String expectedTitle = "We are Hiring!";
-        String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, expectedTitle, "Title does not match");
+    String expectedTitle = "We are Hiring!";
+    String actualTitle = driver.getTitle();
+    Assert.assertEquals(actualTitle, expectedTitle, "Title does not match");
 
         
-        driver.navigate().to("https://www.facebook.com");
+    driver.navigate().to("https://www.facebook.com");
 
         
-        driver.navigate().back();
+    driver.navigate().back();
 
         
-        String currentURL = driver.getCurrentUrl();
-        System.out.println("Current URL: " + currentURL);
+    String currentURL = driver.getCurrentUrl();
+    System.out.println("Current URL: " + currentURL);
 
         
-        driver.navigate().forward();
+    driver.navigate().forward();
 
         
-        driver.navigate().refresh();
-    }
+    driver.navigate().refresh();
+  }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+  @AfterMethod
+  public void tearDown() {
+    driver.quit();
+  }
 }
